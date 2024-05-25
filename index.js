@@ -15,11 +15,6 @@ const { generateDependencyReport } = require('@discordjs/voice');
 console.log(generateDependencyReport());
 
 
-let players = {
-
-}
-
-
 for (const folder of commandFolders) {
     const commandsPath = path.join(foldersPath, folder);
     const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
@@ -60,3 +55,9 @@ client.on(Events.InteractionCreate, async interaction => {
 });
 
 client.login(process.env.DISCORD_TOKEN);
+
+
+module.exports = {
+    players: {},
+    client
+}
